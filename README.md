@@ -11,11 +11,16 @@ Learning to code is hard and many beginners rely on videos, articles and tutoria
 
 ![](http://i.giphy.com/qUDenOaWmXImQ.gif)
 
-## Models + ERD
+## ERD
+
+![](app/assets/images/erdplus-diagram.png)
+
 
 ## Wireframes and Flow
 
 ## Never Before Used Gem
+
+bcrypt [https://rubygems.org/gems/bcrypt/versions/3.1.11](https://rubygems.org/gems/bcrypt/versions/3.1.11)
 
 ## API used: ComicVine
 API courtesy of [http://comicvine.gamespot.com/](http://comicvine.gamespot.com/) which provided us the avatars for users to select on sign up.
