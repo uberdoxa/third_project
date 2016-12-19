@@ -1,4 +1,8 @@
 <%= form_for(@user) do |f| %>
+	<% @avatars.each do |avatar| %>
+		<%= image_tag avatar %>
+		<%= f.radio_button :image_url, avatar %>
+	<% end %>
 	<p>
 		<%= f.label :name %>:<br>
 		<%= f.text_field :name, size: 25, autofocus: true %>

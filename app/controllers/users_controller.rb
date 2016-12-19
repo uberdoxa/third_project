@@ -9,16 +9,21 @@ class UsersController < ApplicationController
 
 	def new
 		response = HTTParty.get('http://comicvine.gamespot.com/api/characters/?api_key=88924f96eb1b6691dcb1f598483f6dde3febae45&limit=5&format=json')
-		@avatar = []
+		@avatars = []
 		body = JSON.parse(response.body)
-		body["result"].each do |x|
-			@avatar << x['image']['icon_url']
+		body["results"].each do |x|
+			@avatars << x['image']['icon_url']
 		end
 		@user = User.new
 	end
 
+
+	# def create
+	# 	user_params = params.require(:user).permit(:name, :email, :password, :password_confirmation)
+
 	def create
-		user_params = params.require(:user).permit(:name, :email, :password, :password_confirmation)
+		user_params = params.require(:user).permit(:name, :email, :password, :password_confirmation, :image_url)
+
 		@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id
