@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-	def index 		
-		@users = User.all						
+	def index
+		@users = User.all
 	end
 
 	def show
@@ -17,15 +17,17 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
-	def create	
+	def create
 		user_params = params.require(:user).permit(:name, :email, :password, :password_confirmation, :image_url)
 		@user = User.new(user_params)
-		if @user.save
+
+          if @user.save
+              MailaMailer.welcome_email(@user).deliver_later
 			session[:user_id] = @user.id
 			redirect_to user_path(@user), notice: "Signed up Successfully"
 		else
 			flash.now[:errors] = @user.errors.full_messages
-			render :new  
+			render :new
 		end
 	end
 
@@ -35,9 +37,9 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		user_params = params.require(:user).permit(:name, :email, :password, :password_confirmation)
+		user_params = params.require(:user).permit(:name, :email, :password, :password_confirmation, :image_url)
 		if @user.update(user_params)
-			redirect_to @user, notice: "Account updated"	
+			redirect_to @user, notice: "Account updated"
 		else
 			flash.now[:errors] = @user.errors.full_messages
 			render :edit
