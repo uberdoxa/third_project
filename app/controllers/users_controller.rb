@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-	def index 		
-		@users = User.all						
+	def index
+		@users = User.all
 	end
 
 	def show
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
-	def create	
+	def create
 		user_params = params.require(:user).permit(:name, :email, :password, :password_confirmation)
 		@user = User.new(user_params)
 		if @user.save
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 			redirect_to user_path(@user), notice: "Signed up Successfully"
 		else
 			flash.now[:errors] = @user.errors.full_messages
-			render :new  
+			render :new
 		end
 	end
 
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		user_params = params.require(:user).permit(:name, :email, :password, :password_confirmation)
 		if @user.update(user_params)
-			redirect_to @user, notice: "Account updated"	
+			redirect_to @user, notice: "Account updated"
 		else
 			flash.now[:errors] = @user.errors.full_messages
 			render :edit
