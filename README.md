@@ -1,1 +1,1 @@
-# ![](/public/images/phpcodehero_logo.png)
+# ![](app/assets/images/phpcodehero_logo.png)
