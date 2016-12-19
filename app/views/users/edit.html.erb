@@ -1,0 +1,23 @@
+<% flash.each do |key, value| %>
+  <%= content_tag(:p, value) %>
+<% end %>
+
+<%= form_for(@user) do |f| %>
+	<p>
+		<%= f.label :name %>:<br>
+		<%= f.text_field :name, size: 25, autofocus: true %>
+	</p>
+	<p>
+		<%= f.label :email %>:<br>
+		<%= f.text_field :email, size: 25 %>
+	</p>
+	<p>
+		<%= f.label :password %>:<br>
+		<%= f.password_field :password, size: 25 %>
+	</p>
+	<p>
+		<%= f.label :password_comfirmation, "Comfirm Passowrd" %>:<br>
+		<%= f.password_field :password_comfirmation, size: 25 %>
+	</p>
+		<%= f.submit %>
+<% end %>
