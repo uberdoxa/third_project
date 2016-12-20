@@ -27,13 +27,8 @@ API courtesy of [http://comicvine.gamespot.com/](http://comicvine.gamespot.com/)
 
 ## Style Guide
 
+Color Palette [https://color.adobe.com/Copy-of-Superman-color-theme-9006055/](https://color.adobe.com/Copy-of-Superman-color-theme-9006055/)
 
+![](app/assets/images/color_palette.png)
 
-Be a Ruby on Rails and Postgres Application
-Have at least 2 models (more if they make sense) that represents the main functional idea for your app, with a relation between 2 tables
-CRUD functionality for at least 1 model
-Have RESTful routes
-Access data from at least ONE external API with HTTParty or another gem (some APIs may have their own gems!)
-Utilize a PSQL database to interact with your stored data and save API data
-Include wireframes and User stories that you designed during the planning process
 
