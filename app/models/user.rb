@@ -5,5 +5,5 @@ class User < ApplicationRecord
   					length: { maximum: 200 }, uniqueness: { case_sensitive: false}
   validates :name, presence: true, length: { maximum: 50 }
   validates :image_url, presence: { :message => "Please chooese your avatar"}
-  belogs_to :level
+  belongs_to :level
 end
