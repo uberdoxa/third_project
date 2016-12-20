@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
 
 	RESPONSE = HTTParty.get('http://comicvine.gamespot.com/api/characters/?api_key=88924f96eb1b6691dcb1f598483f6dde3febae45&limit=5&format=json')
 	def index 		
