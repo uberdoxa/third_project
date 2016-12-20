@@ -21,7 +21,8 @@ class UsersController < ApplicationController
 
 		@user = User.new(user_params)
 
-          if @user.save
+		@user.level = Level.find_by(title: "Level 1")
+    if @user.save
               MailaMailer.welcome_email(@user).deliver_later
 			session[:user_id] = @user.id
 			redirect_to user_path(@user), notice: "Signed up Successfully"
