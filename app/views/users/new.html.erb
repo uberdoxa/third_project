@@ -1,9 +1,5 @@
 <%= form_for(@user) do |f| %>
-	<% @avatars.each do |avatar| %>
-		<%= image_tag avatar %>
-		<%= f.radio_button :image_url, avatar %>
-	<% end %>
-	<p>
+<p>
 		<%= f.label :name %>:<br>
 		<%= f.text_field :name, size: 25, autofocus: true %>
 	</p>
@@ -19,6 +15,11 @@
 		<%= f.label :password_comfirmation, "Comfirm Passowrd" %>:<br>
 		<%= f.password_field :password_comfirmation, size: 25 %>
 	</p>
+		<% @avatars.each do |avatar| %>
+		<%= image_tag avatar %>
+		<%= f.radio_button :image_url, avatar %>
+	<% end %><br><br>
+	
 	<%= f.submit %>
 <% end %>
 
