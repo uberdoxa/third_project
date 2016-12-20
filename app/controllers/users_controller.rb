@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 
 	RESPONSE = HTTParty.get('http://comicvine.gamespot.com/api/characters/?api_key=88924f96eb1b6691dcb1f598483f6dde3febae45&limit=5&format=json')
-	def index 		
-		@users = User.all						
+	def index
+		@users = User.all
+    @levels = Level.all
 	end
 
 	def show
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
-	def create	
+	def create
 		@avatars = create_avatars
 		user_params = params.require(:user).permit(:name, :email, :password, :password_confirmation, :image_url)
 
@@ -31,7 +32,7 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		@avatars = create_avatars	
+		@avatars = create_avatars
 		@user = User.find(params[:id])
 
 	end
