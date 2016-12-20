@@ -14,3 +14,48 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(function(){
+  console.log('ready');
+
+  function makeChallenges(num){
+    $('#challs').empty();
+    for(var i = 0; i < num; i++){
+      var title_div, desc_div, q_div, a_div,
+          ch_div, lab_title, ch_title, lab_desc,
+          ch_desc, lab_q, ch_q, lab_a, ch_a;
+
+      title_div = $('<div></div>');
+      desc_div = $('<div></div>');
+      q_div = $('<div></div>');
+      a_div = $('<div></div>');
+
+      ch_div = $('<div class="challenge" id="challenge'+i+'">Callenge '+(i+1)+'<br></div>');
+
+      lab_title = $('<label for="ch_title'+i+'">Title: </label>');
+      ch_title = $('<input type="text" name="ch_title'+i+'" id="ch_title'+i+'">');
+      lab_desc = $('<label for="ch_desc'+i+'">Description: </label>');
+      ch_desc = $('<input type="text" name="ch_desc'+i+'" id="ch_desc'+i+'">');
+      lab_q = $('<label for="ch_q'+i+'">Question: </label>');
+      ch_q = $('<input type="text" name="ch_q'+i+'" id="ch_q'+i+'">');
+      lab_a = $('<label for="ch_a'+i+'">Answer: </label>');
+      ch_a = $('<input type="text" name="ch_a'+i+'" id="ch_a'+i+'">');
+
+      ch_div.append(title_div).append(desc_div).append(q_div).append(a_div);
+      title_div.append(lab_title).append(ch_title);
+      desc_div.append(lab_desc).append(ch_desc);
+      q_div.append(lab_q).append(ch_q);
+      a_div.append(lab_a).append(ch_a);
+      ch_div.append(title_div).append(desc_div).append(q_div).append(a_div).append('<br>');
+
+      $('#challs').append(ch_div);
+    }
+  }
+
+  var num_challenges = $('#num_challenges').val();
+  makeChallenges(num_challenges);
+
+  $('#num_challenges').change(function(){
+    num_challenges = $(this).val();
+    makeChallenges(num_challenges);
+  });
+});
