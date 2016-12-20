@@ -1,0 +1,22 @@
+<%= form_for(@level) do |f| %>
+	<div>
+		<%= label(:title, "Title: ") %>
+		<%= f.text_field(:title) %>
+	</div>
+	<div>
+		<%= label(:description, "Description: ") %>
+		<%= f.text_field(:description) %>
+	</div>
+	<div>
+		<%= label(:num_challenges, "Number of Challenges: ") %>
+		<select name="num_challenges" id="num_challenges">
+			<% 5.times do |i| %>
+			<option value="<%= i+1 %>"><%= i+1 %></option>
+			<% end %>
+		</select>
+	</div>
+	<div id="challs"></div>
+	<div>
+		<%= f.submit "Make" %>
+	</div>
+<% end %>

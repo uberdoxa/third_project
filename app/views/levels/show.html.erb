@@ -1,0 +1,15 @@
+<div><h1><%= @level.title %></h1></div>
+<div><%= @level.description %></div>
+<br>
+<div>
+	<% @level.challenges.each do |c| %>
+	<div class="show_challenge">
+		<div><%= c.title %></div>
+		<div><%= c.description %></div>
+		<div><%= c.question %></div>
+		<div><%= c.answer %></div>
+	</div>
+	<% end %>
+</div>
+
+

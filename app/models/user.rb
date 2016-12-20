@@ -4,4 +4,6 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
   					length: { maximum: 200 }, uniqueness: { case_sensitive: false}
   validates :name, presence: true, length: { maximum: 50 }
+  validates :image_url, presence: { :message => "Please chooese your avatar"}
+  belongs_to :level
 end
