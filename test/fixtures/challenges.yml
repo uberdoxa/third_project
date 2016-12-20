@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  question: MyString
+  answer: MyString
+  level_id: 1
+  level: one
+
+two:
+  title: MyString
+  description: MyText
+  question: MyString
+  answer: MyString
+  level_id: 1
+  level: two
