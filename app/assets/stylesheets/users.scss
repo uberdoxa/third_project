@@ -1,3 +1,66 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$font-header: 'Bangers', cursive;
+$font-text: 'Marvel', sans-serif;
+
+$dark-grey: #1A1E26;
+$light-blue: #0E5B9E;
+$dark-blue: #0E3659;
+$yellow: #F2C131;
+$red: #AC1F1F;
+// Body/Overall Page styleing
+body {
+  min-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background-color: $dark-blue;
+}
+//*********************************************************************
+//Header styling
+header {
+  background-color: $light-blue;
+  box-shadow: 0px 6px 31px 5px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 6px 31px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 6px 31px 5px rgba(0,0,0,0.75);
+  div {
+    display: inline-block;
+    padding: 40px;
+    h1{
+      font-size: 3em;
+      text-shadow: rgb(3, 3, 3) 5px 4px 8px;
+      font-family: $font-header;
+      margin: 0;
+      letter-spacing: 0.1em;
+      float: left;
+      color: $yellow;
+    }
+  }
+  nav {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    float: right;
+    ul {
+      position: relative;
+      margin: 15% 20%;
+      padding: 0;
+      display: inline-block;
+      list-style: none;
+      li {
+        display: inline-block;
+        a {
+          text-decoration: none;
+          text-shadow: rgb(3, 3, 3) 5px 4px 8px;
+          font-family: $font-text;
+          font-size: 1.5em;
+        }
+        a {color:$red;}      /* unvisited link */
+        a:visited {color:$red;}  /* visited link */
+        a:hover {color:$yellow;}  /* mouse over link */
+        a:active {color:$red;} /* selected link */
+      }
+    }
+  }
+}
+//*********************************************************************

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Codehero</title>
+    <title>PHPCodeHero</title>
     <%= csrf_meta_tags %>
 
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Marvel" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+<<<<<<< HEAD
+    <%= render "layouts/header" %>
+=======
   <% if current_user %>
   	<%= link_to current_user.name, current_user %>
   	<%= link_to "Sign out", session_path, method: :delete %><br>
@@ -19,6 +23,7 @@
   	<% flash.each do |key, value| %>
   		<%= content_tag(:p, value) %>
 		<% end %>
+>>>>>>> master
     <%= yield %>
   </body>
 </html>
