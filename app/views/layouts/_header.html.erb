@@ -2,18 +2,5 @@
 <div>
 <h1>PHPCodeHero</h1>
 </div>
-<nav>
-  <ul>
-    <% if current_user %>
-      <li><%= link_to "View your Account Edit", current_user %></li>
-      <li><%= link_to "Logout", session_path, method: :delete %></li>
-    <% else %>
-      <li><%= link_to "Sign Up", signup_path %></li>
-      <li><%= link_to "Sign In", new_session_path %></li>
-  <% end %>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:p, value) %>
-    <% end %>
-    </ul>
-</nav>
+
 </header>
