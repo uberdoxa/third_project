@@ -1,16 +1,19 @@
 <div class="container">
 <section>
-	<h1>So, you want to be a superhero?...</h1>
-	<p>...or at least a PHP Code Hero. Well, we have no radio-active spiders or kryptonite here but if you follow our Lessons and finish the Challenges, you'll be practicing your PHP powers in no time!</p>
+	<center><h1>So, you want to be a superhero?...</h1></center>
+	<center><p>...or at least a PHP Code Hero. Well, we have no radio-active spiders or kryptonite here but if you follow our Lessons and finish the Challenges, you'll be practicing your PHP powers in no time!</p></center>
+	<div>
 	<h2>Levels</h2>
+	<hr>
 	<ul>
 		<% @levels.each do |level| %>
 			<li><div><%= level.title %></div></li>
 		<% end %>
 	</ul>
+	</div>
 </section>
 <aside>
-	<div>
+	<div class="aside_form">
   	<% if current_user %>
     	<%= link_to "View or Edit your Account", current_user %>
     	<%= link_to "Logout", session_path, method: :delete %>
@@ -37,13 +40,15 @@
 
   	<% end %>
 	</div>
-	<div>
-		<h1>All Users</h1>
+	<div class="aside_users">
+		<h2>All Users</h2>
 		<ul>
 			<% @users.each do |user| %>
 				<li>
+					<%= image_tag user.image_url%>
 					<%= user.name %>
 				</li>
+
 			<% end %>
 		</ul>
 	</div>

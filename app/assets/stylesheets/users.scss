@@ -20,6 +20,10 @@ body {
 //*********************************************************************
 //Header styling
 header {
+  top: 0;
+  display: block;
+  position: fixed;
+  width: 100%;
   background-color: $light-blue;
   box-shadow: 0px 5px 35px -5px rgba(0,0,0,0.75);
   -webkit-box-shadow: 0px 5px 35px -5px rgba(0,0,0,0.75);
@@ -40,28 +44,112 @@ header {
 }
 
 //*********************************************************************
+// Container placement
+.container {
+  margin-top: 135px;
+//*********************************************************************
 // Main Section Styling
-section {
+  section {
   display: inline-block;
   width: 70%;
   float: left;
   h1 {
     display: inline-block;
-    margin: 0 auto;
     font-size: 3em;
     font-family: $font-header;
     color: white;
   }
   p {
     display: inline-block;
-    margin: 0 auto;
+    width: 80%;
+    font-family: $font-text;
+    font-size: 1.5em;
   }
+  div {
+    background-color: $light-blue;
+    display: block;
+    margin: 0 auto;
+    padding: 3%;
+    width: 80%;
+    color: white;
+    border-radius: 27px 27px 27px 27px;
+    -moz-border-radius: 27px 27px 27px 27px;
+    -webkit-border-radius: 27px 27px 27px 27px;
+    border: 2px solid $red;
 
+    h2 {
+    margin: 2% auto;
+    font-size: 2em;
+    font-family: $font-header;
+    }
+    ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    font-family: $font-text;
+    font-size: 1.5em;
+    li {
+      margin: 2% 0;
+      div {
+        border: 2px solid $yellow;
+        border-radius: 27px 27px 27px 27px;
+        -moz-border-radius: 27px 27px 27px 27px;
+        -webkit-border-radius: 27px 27px 27px 27px;
+      }
+      }
+    }
+  }
 }
 //*********************************************************************
 // Aside Section Styling
-aside {
+  aside {
+  padding: 3%;
+  background-color: $dark-grey;
   display: inline-block;
-  width: 30%;
+  width: 20%;
+  height: 100vh;
   float: right;
+  box-shadow: -3px 0px 25px -1px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -3px 0px 25px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: -3px 0px 25px -1px rgba(0,0,0,0.75);
+    .aside_form {
+      width: 100%;
+      h2 {
+        display: inline-block;
+        margin: 2% auto;
+        font-size: 2em;
+        font-family: $font-header;
+        color: white;
+      }
+      p {
+        display: inline-block;
+        font-family: $font-text;
+        font-size: 1.5em;
+        margin-bottom: 1%;
+      }
+      a {
+        text-decoration: none;
+      }
+    .aside_users {
+      h2 {
+        display: inline-block;
+        margin: 2% auto;
+        font-size: 2em;
+        font-family: $font-header;
+        color: white;
+      }
+    }
+    }
+  }
 }
+//Clearfix
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+  }
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
