@@ -17,6 +17,7 @@
 $(function(){
   console.log('ready');
 
+  // /levels/new handling
   function makeChallenges(num){
     $('#challs').empty();
     for(var i = 0; i < num; i++){
@@ -59,16 +60,30 @@ $(function(){
     makeChallenges(num_challenges);
   });
 
-  var enableNext = function() {
-    $('#answer').click(function(){
-      window.redirect('/lessons/');
-    });
+  // /levels/:id handling
+
+  // var enableNext = function() {
+  //   $('#answer').click(function(){
+  //     window.location.replace('/levels/');
+  //   });
+  // };
+  // level_num: 2
+
+  var checkVal = function(input){
+    return input.attr('ans').split(" ").join('') === input.val().split(" ").join('') ||
+            input.attr('ans').split(" ").join('') === input.val().replace(/"/g, "'").split(" ").join('') ||
+            input.attr('ans').split(" ").join('') === input.val().replace(/'/g, '"').split(" ").join('');
   };
+
+  // var checkAllVals = function(inputs){
+  //   return (inputs.length === inputs.filter(el=>{return checkVal($(el))}).length) ? true : false;
+  // };
 
   $('.user_ans').bind('input propertychange', function(){
     //check answer
-    ($(this).attr('ans') === $(this).val() || $(this).attr('ans') === $(this).val().replace(/"/g, "'") || $(this).attr('ans') === $(this).val().replace(/'/g, '"')) ? console.log('correct') : console.log('incorrect');
+    var result = checkVal($(this)) ? 'correct' : '';
+    $('#result').text(result);
     //if correct check all answers
-      //if all answers enable next level
+    //if all answers enable next level
   });
 });
