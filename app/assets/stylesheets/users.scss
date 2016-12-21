@@ -114,9 +114,15 @@ header {
       margin: 2% 0;
       div {
         border: 2px solid $yellow;
+        background-color: white;
         border-radius: 27px 27px 27px 27px;
         -moz-border-radius: 27px 27px 27px 27px;
         -webkit-border-radius: 27px 27px 27px 27px;
+        a {
+          text-decoration: none;
+          color: $red;
+          text-shadow: rgb(3, 3, 3) 4px 4px 13px;
+        }
       }
       }
     }
@@ -129,7 +135,6 @@ header {
   background-color: $dark-grey;
   display: inline-block;
   width: 20%;
-  min-height: 100%;
   float: right;
   box-shadow: -3px 0px 25px -1px rgba(0,0,0,0.75);
   -webkit-box-shadow: -3px 0px 25px -1px rgba(0,0,0,0.75);
@@ -161,6 +166,7 @@ header {
       width: 100%;
       margin-top: 5%;
       border-top: 2px solid $red;
+      overflow: scroll;
       h2 {
         display: inline-block;
         margin-top: 20%;

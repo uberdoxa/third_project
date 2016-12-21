@@ -1,13 +1,20 @@
 <div class="container">
 <section>
-	<center><h1>So, you want to be a superhero?...</h1></center>
-	<center><p>...or at least a PHP Code Hero. Well, we have no radio-active spiders or kryptonite here but if you follow our Lessons and finish the Challenges, you'll be practicing your PHP powers in no time!</p></center>
+	<% if current_user %>
+		<center><h1>Continue your code journey!</h1></center>
+		<center><p>Your PHP powers won't develop themselves! Click on a lesson below to accept your challenge and level up to PHP Code Hero!</p></center>
+	<% else %>
+		<center><h1>So, you want to be a superhero?...</h1></center>
+		<center><p>...or at least a PHP Code Hero. Well, we have no radio-active spiders or kryptonite here but if you follow our Lessons and finish the Challenges, you'll be practicing your PHP powers in no time!</p></center>
+	<% end %>
+	<!-- <center><h1>So, you want to be a superhero?...</h1></center>
+	<center><p>...or at least a PHP Code Hero. Well, we have no radio-active spiders or kryptonite here but if you follow our Lessons and finish the Challenges, you'll be practicing your PHP powers in no time!</p></center> -->
 	<div>
 	<h2>Levels</h2>
 	<hr>
 	<ul>
 		<% @levels.each do |level| %>
-			<li><div><%= level.title %></div></li>
+			<li><div><a href="levels/<%= level.id %>"><%= level.title %></a></div></li>
 		<% end %>
 	</ul>
 	</div>
@@ -56,4 +63,6 @@
 		</ul>
 	</div>
 </aside>
+<div style="clear: both">&nbsp;</div>
 </div>
+<div style="clear: both" />
