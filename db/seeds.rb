@@ -19,7 +19,8 @@ Level.destroy_all
 
 
   Level.create(title: "Basic B",
-                       description: "Introduction to PHP 1")
+                       description: "Introduction to PHP 1",
+                       level_num:1)
   Challenge.create(title: "Challenge 1",
                               description: "A PHP script starts with <?php and ends with ?>:PHP script that uses a built-in PHP function 'echo' to output the text 'Hello World!'  ' on a web page:",
                               level_id: Level.last.id,
@@ -32,7 +33,8 @@ Level.destroy_all
                                answer: "$x='porky'")
 
   Level.create(title: "Intermedio B",
-                        description: "Intro to php 2")
+                        description: "Intro to php 2",
+                        level_num:2)
   Challenge.create(
                               title:"Challenge 1",
                               description: "strlen() function returns the length of a string.",
@@ -49,7 +51,8 @@ Level.destroy_all
                               )
 
 Level.create(title: "Advanced B",
-                        description: "Intro to php 3")
+                        description: "Intro to php 3",
+                        level_num:3)
  Challenge.create(
                               title:"Challenge 1",
                               description: "In PHP, the array() function is used to create an array:",
