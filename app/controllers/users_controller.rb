@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 	RESPONSE = HTTParty.get('http://comicvine.gamespot.com/api/characters/?api_key=88924f96eb1b6691dcb1f598483f6dde3febae45&limit=5&format=json')
+	before_action :signin_required, only: [:index, :show, :edit, :update, :destroy]
 	def index
 		@users = User.all
     @levels = Level.all
@@ -55,7 +56,7 @@ class UsersController < ApplicationController
 		session[:user_id] = nil
 		redirect_to root_url, alert: "Account deleted"
 	end
-
+	private
 	def create_avatars
 		avatars = []
 		body = JSON.parse(RESPONSE.body)
