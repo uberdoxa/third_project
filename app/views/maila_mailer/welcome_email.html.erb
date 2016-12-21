@@ -2,16 +2,26 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <h1>Welcome to Codehero.com, <%= @user.name %></h1>
-    <p>
-      You have successfully signed up to codehero,
+    <style>
+                a{color:white;}
 
-    </p>
+                h1{font-family:cursive;}
+                img{border-radius:50%}
+                p{font-family: monospace}
+
+    </style>
+  </head>
+  <body style="background: darkblue;color:yellow">
+  <div>
+    <center><h1>Welcome to PHPCODEHERO.com</h1><center>
+    <%= image_tag @user.image_url %><br><h1><%= @user.name %></h1>
     <p>
-      To login to the site, just follow this link: <%= @url %>.
-    </p>
-    <p>Thanks for joining and have a great day!</p>
+      You have successfully signed up to PHPCODEHERO,
+      To login to the site, just follow this link: <%= @url%>.<br>
+      This is your first step towards becoming a successful programmer.<br>
+      Things are going to get tough, but don't give up.
+      Thanks for joining in. Live,Learn,Grow!!
+      </p>
+    </div>
   </body>
 </html>
