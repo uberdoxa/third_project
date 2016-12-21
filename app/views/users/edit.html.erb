@@ -1,27 +1,27 @@
-<% flash.each do |key, value| %>
-  <%= content_tag(:p, value) %>
-<% end %>
+<div class="editcontainer">
+	<div class="edit">
+		<h1>Edit User Info</h1>
+		<% flash.each do |key, value| %>
+		  <%= content_tag(:p, value) %>
+		<% end %>
 
-<%= form_for(@user) do |f| %>
-	<p>
-		<%= f.label :name %>:<br>
-		<%= f.text_field :name, size: 25, autofocus: true %>
-	</p>
-	<p>
-		<%= f.label :email %>:<br>
-		<%= f.text_field :email, size: 25 %>
-	</p>
-	<p>
-		<%= f.label :password %>:<br>
-		<%= f.password_field :password, size: 25 %>
-	</p>
-	<p>
-		<%= f.label :password_comfirmation, "Comfirm Passowrd" %>:<br>
-		<%= f.password_field :password_comfirmation, size: 25 %>
-	</p>
-	<% @avatars.each do |avatar| %>
-		<%= image_tag avatar %>
-		<%= f.radio_button :image_url, avatar %>
-	<% end %>
-		<%= f.submit %>
-<% end %>
+		<%= form_for(@user) do |f| %>
+			<p>
+				<%= f.label :name %>:<br>
+				<%= f.text_field :name, size: 25, autofocus: true %><br>
+				<%= f.label :email %>:<br>
+				<%= f.text_field :email, size: 25 %><br>
+				<%= f.label :password %>:<br>
+				<%= f.password_field :password, size: 25 %><br>
+				<%= f.label :password_comfirmation, "Confirm Password" %>:<br>
+				<%= f.password_field :password_comfirmation, size: 25 %><br><br>
+			<% @avatars.each do |avatar| %>
+				<%= image_tag avatar %>
+				<%= f.radio_button :image_url, avatar %>
+			<% end %>
+			<br>
+				<%= f.submit %>
+			</p>
+		<% end %>
+	</div>
+</div>
