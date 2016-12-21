@@ -58,4 +58,17 @@ $(function(){
     num_challenges = $(this).val();
     makeChallenges(num_challenges);
   });
+
+  var enableNext = function() {
+    $('#answer').click(function(){
+      window.redirect('/lessons/');
+    });
+  };
+
+  $('.user_ans').bind('input propertychange', function(){
+    //check answer
+    ($(this).attr('ans') === $(this).val() || $(this).attr('ans') === $(this).val().replace(/"/g, "'") || $(this).attr('ans') === $(this).val().replace(/'/g, '"')) ? console.log('correct') : console.log('incorrect');
+    //if correct check all answers
+      //if all answers enable next level
+  });
 });
