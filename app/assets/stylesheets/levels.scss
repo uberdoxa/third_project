@@ -5,9 +5,11 @@
 .levelscontainer {
   margin-top: 160px;
 }
-.correct::after{
+
+.correct::after {
   content: "correct";
 }
-.correct.hides::after{
+
+.correct.hides::after {
   display: none;
 }

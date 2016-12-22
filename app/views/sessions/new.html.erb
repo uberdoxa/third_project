@@ -52,8 +52,8 @@
 			<% @users.each do |user| %>
 				<li>
 					<%= image_tag user.image_url%>
-					<%= user.name %>
-					<%= user.level.title %>
+					<%= user.name %>:
+					Level <%= user.level_id %>
 				</li>
 				<hr>
 
