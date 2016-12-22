@@ -22,6 +22,8 @@ Learning to code is hard and many beginners rely on videos, articles and tutoria
 
 bcrypt [https://rubygems.org/gems/bcrypt/versions/3.1.11](https://rubygems.org/gems/bcrypt/versions/3.1.11)
 
+jquery-turbolinks [https://github.com/kossnocorp/jquery.turbolinks](https://github.com/kossnocorp/jquery.turbolinks)
+
 ## API used: ComicVine
 API courtesy of [http://comicvine.gamespot.com/](http://comicvine.gamespot.com/) which provided us the avatars for users to select on sign up.
 
