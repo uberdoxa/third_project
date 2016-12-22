@@ -66,7 +66,7 @@ $(document).on('turbolinks:load', function(){
 
   var enableNext = function(el) {
     el.click(function(){
-      window.location.href = "/levels";
+      window.location.href = "/levels?nextlevel=true";
     });
   };
   // level_num: 2
