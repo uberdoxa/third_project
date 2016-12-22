@@ -24,7 +24,7 @@ Level.destroy_all
   Challenge.create(title: "Challenge 1",
                               description: "A PHP script starts with <?php and ends with ?>:PHP script that uses a built-in PHP function 'echo' to output the text 'Hello World!'  ' on a web page:",
                               level_id: Level.last.id,
-                              question: "use echo to print 'Hello world' "
+                              question: "use echo to print 'Hello world'",
                                answer: "echo 'Hello World!';")
   Challenge.create(title: "Challege 2",
                                description:"a variable starts with the $ sign, followed by the name of the variable:",
@@ -67,6 +67,5 @@ Level.create(title: "Advanced B",
                               question:"how do you get the length of array cars",
                               answer:"echo count($cars)"
                               )
-
 
 
