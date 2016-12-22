@@ -1,20 +1,23 @@
 <div class="levelscontainer">
+	<div class="levelsinfo">
 	<div><h1><%= @level.title %></h1></div>
-	<div><%= @level.description %></div>
+	<div><%= @level.description %></div><br>
 	<br>
 	<div>
 		<% @level.challenges.each do |c| %>
 		<div class="show_challenge">
-			<div><%= c.title %></div>
-			<div><%= c.description %></div>
-			<div><%= c.question %></div>
+			<h2><%= c.title %></h2><br>
+			<p><%= c.description %><br><br>
+				 <span><%= c.question %></span></p><br>
 			<div class="correct hides">
-				<textarea id="user_ans" class="user_ans" placeholder="Enter code here." ans="<%= c.answer %>"></textarea>
+				<textarea id="user_ans" class="user_ans" placeholder="Enter code here." ans="<%= c.answer %>"></textarea><br>
 			</div>
-		</div>
+		</div><br>
 		<% end %>
-		<span id="result"></span>
+		<span id="result"></span><br>
+
 		<div><button id="next">Next Level</button></div>
+	</div>
 	</div>
 </div>
 

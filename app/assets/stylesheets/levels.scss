@@ -1,9 +1,49 @@
 // Place all the styles related to the levels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$font-logo: 'Bangers', cursive;
+$font-text: 'Marvel', sans-serif;
+$font-header: 'Droid Serif', serif;
+
+$dark-grey: #1A1E26;
+$light-blue: #0E5B9E;
+$dark-blue: #0E3659;
+$yellow: #F2C131;
+$red: #AC1F1F;
 
 .levelscontainer {
   margin-top: 160px;
+  color: white;
+  padding: 2%;
+  font-size: 1.2em;
+  font-family: $font-text;
+  .levelsinfo {
+    border-radius: 27px 27px 27px 27px;
+    -moz-border-radius: 27px 27px 27px 27px;
+    -webkit-border-radius: 27px 27px 27px 27px;
+    padding: 2%;
+    width: 80%;
+    background-color: $dark-grey;
+    margin: 0 auto;
+    h1 {
+      font-family: $font-header;
+    }
+    h2 {
+      font-family: $font-header;
+      color: $red;
+      margin: 10px;
+    }
+    textarea {
+      width: 25%;
+      font-size: 1.1em;
+    }
+    #next {
+      width: 25%;
+      font-family: $font-text;
+      font-size: 1em;
+      background-color: $yellow;
+    }
+  }
 }
 
 .correct::after {
