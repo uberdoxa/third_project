@@ -112,19 +112,18 @@ header {
     font-size: 1.5em;
     li {
       margin: 2% 0;
+      a {
+          text-decoration: none;
+        }
       div {
         border: 2px solid $yellow;
         background-color: white;
         border-radius: 27px 27px 27px 27px;
         -moz-border-radius: 27px 27px 27px 27px;
         -webkit-border-radius: 27px 27px 27px 27px;
-        a {
-          text-decoration: none;
-          color: $red;
-          text-shadow: rgb(3, 3, 3) 4px 4px 13px;
-        }
+        color: $red;
       }
-      }
+    }
     }
   }
 }

@@ -7,14 +7,12 @@
 		<center><h1>So, you want to be a superhero?...</h1></center>
 		<center><p>...or at least a PHP Code Hero. Well, we have no radio-active spiders or kryptonite here but if you follow our Lessons and finish the Challenges, you'll be practicing your PHP powers in no time!</p></center>
 	<% end %>
-	<!-- <center><h1>So, you want to be a superhero?...</h1></center>
-	<center><p>...or at least a PHP Code Hero. Well, we have no radio-active spiders or kryptonite here but if you follow our Lessons and finish the Challenges, you'll be practicing your PHP powers in no time!</p></center> -->
 	<div>
 	<h2>Levels</h2>
 	<hr>
 	<ul>
 		<% @levels.each do |level| %>
-			<li><div><a href="levels/<%= level.id %>"><%= level.title %></a></div></li>
+			<li><a href="levels/<%= level.id %>"><div><%= level.title %></div></a></li>
 		<% end %>
 	</ul>
 	</div>
