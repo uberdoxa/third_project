@@ -1,6 +1,20 @@
 class LevelsController < ApplicationController
     def index
+      # if(params[:user_id])
+      #   user = User.find(params[:user_id].to_i)
+      #   level = Level.find_by(level_num: user.level.level_num + 1)
+      #   user.level_id = level.id
+      # end
       @levels = Level.all
+      if(current_user and params[:nextlevel])
+        user = User.find(session[:user_id])
+        level = Level.find_by(level_num: user.level.level_num + 1)
+        user.level = level
+        puts user.level.level_num
+        redirect_to "/levels/#{user.level.id}"
+      else
+        redirect_to "/"
+      end
     end
 
     def show
