@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     if @user.save
               MailaMailer.welcome_email(@user).deliver_later
 			session[:user_id] = @user.id
-			redirect_to user_path(@user), notice: "Signed up Successfully"
+			redirect_to root_url, notice: "Signed up Successfully"
 		else
 			flash.now[:errors] = @user.errors.full_messages
 			render :new
