@@ -9,11 +9,12 @@
 			<div><%= c.description %></div>
 			<div><%= c.question %></div>
 			<div class="correct hides">
-				<textarea id="user_ans" class="user_ans" placeholder="Enter code here." ans="<%= c.answer %>"></textarea><span id="result"></span>
+				<textarea id="user_ans" class="user_ans" placeholder="Enter code here." ans="<%= c.answer %>"></textarea>
 			</div>
-			<div><button id="next">Next Level</button></div>
 		</div>
 		<% end %>
+		<span id="result"></span>
+		<div><button id="next">Next Level</button></div>
 	</div>
 </div>
 
