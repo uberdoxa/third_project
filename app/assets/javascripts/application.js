@@ -16,35 +16,67 @@
 //= require turbolinks
 //= require_tree .
 
+
+
+////
+
 $(document).on('turbolinks:load', function(){
   console.log('ready');
 //animation home page
 
-$(#'monoL1').hide('slow');
-$(#'monoL2').hide('slow');
+$('#monoL1').show('slow');
+$('#monoL2').hide('slow');
+$('#monoL3').hide('slow');
 
+//ft=$('#monoL1').css('height');
+var sized=function(){
+ftr=$('#monoL2').css('height');
+$('#monoL1').css('height',ftr);
+$('#monoL3').css('height',ftr);
+$('#monoL2').css('height',ftr);}
+var cnt=0;
 var hide_all=function()
   {
-  $(#'monoL1').hide('slow');
-  $(#'monoL2').hide('slow');
+  $('#monoL1').hide('slow');
+  $('#monoL2').hide('slow');
   }
 var show_a=function()
-  {
-  $(#'monoL2').hide('slow');
-  $(#'monoL1').show('slow');
+  {sized();
+  $('#monoL2').hide('slow');
+  $('#monoL1').show('slow');
+  $('#monoL3').hide('slow');
   }
 
 var show_b=function()
-  {
-  $(#'monoL1').hide('slow');
-  $(#'monoL2').show('slow');
+  {sized();
+  $('#monoL1').hide('slow');
+  $('#monoL2').show('slow');
+  $('#monoL3').hide('slow');
+  }
+
+  var show_c=function()
+  {sized();
+  $('#monoL1').hide('slow');
+  $('#monoL2').hide('slow');
+  $('#monoL3').show('slow');
   }
 
 var fun=function(){
-window.setTimeout(show_a, 2000);
-window.setTimeout(show_b, 2000);
+// window.setTimeout(show_a, 5000);
+ //window.setTimeout(show_b, 5000);
+if(cnt === 0){
+  show_a();
 }
-window.setInterval(fun, 3000);
+else if(cnt ===1){
+show_b();}
+else
+show_c();
+
+cnt+=1;
+if(cnt >2)
+cnt=0;
+}
+window.setInterval(fun, 7000);
 
 
 ////
