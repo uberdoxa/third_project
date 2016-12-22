@@ -18,7 +18,36 @@
 
 $(document).on('turbolinks:load', function(){
   console.log('ready');
+//animation home page
 
+$(#'monoL1').hide('slow');
+$(#'monoL2').hide('slow');
+
+var hide_all=function()
+  {
+  $(#'monoL1').hide('slow');
+  $(#'monoL2').hide('slow');
+  }
+var show_a=function()
+  {
+  $(#'monoL2').hide('slow');
+  $(#'monoL1').show('slow');
+  }
+
+var show_b=function()
+  {
+  $(#'monoL1').hide('slow');
+  $(#'monoL2').show('slow');
+  }
+
+var fun=function(){
+window.setTimeout(show_a, 2000);
+window.setTimeout(show_b, 2000);
+}
+window.setInterval(fun, 3000);
+
+
+////
   // /levels/new handling
   function makeChallenges(num){
     $('#challs').empty();
