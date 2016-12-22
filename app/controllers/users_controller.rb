@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
 		@user = User.new(user_params)
 
-		@user.level = Level.find_by(title: "Level 1")
+		@user.level = Level.find_by(level_num: 1)
     if @user.save
               MailaMailer.welcome_email(@user).deliver_later
 			session[:user_id] = @user.id
