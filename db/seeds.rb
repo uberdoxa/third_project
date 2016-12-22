@@ -24,7 +24,7 @@ Level.destroy_all
   Challenge.create(title: "Challenge 1: Hello World!",
                               description: "A PHP script starts with <?php and ends with ?> To print words, PHP uses a built-in function 'echo' to output the text. For example, <?php echo 'Hello World';?> Would print 'Hello World!' on a web page",
                               level_id: Level.last.id,
-                              question: "Use echo to print 'HELLO WORLD'",
+                              question: "Use echo to print 'Hello World'",
                                answer: "<?php echo 'Hello World';?>")
   Challenge.create(title: "Challege 2: Declare a variable",
                                description:"With your new super powers you can create new words! To declare a variable start with the $ sign, followed by the name of the variable. For example, if you wanted to declare variable 'friendly neighborhood' to value 'spiderman', you would write '$friendlyneighborhood='spiderman';' ",
