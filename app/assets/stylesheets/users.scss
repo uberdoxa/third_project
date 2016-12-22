@@ -114,6 +114,11 @@ header {
       margin: 2% 0;
       a {
           text-decoration: none;
+          .not-active {
+          pointer-events: none;
+          cursor: default;
+          background-color: gray;
+        }
         }
       div {
         border: 2px solid $yellow;
@@ -237,7 +242,7 @@ header {
     background-color: $dark-grey;
     margin: 0 auto;
     h2 {
-      font-family: $font-header
+      font-family: $font-header;
     }
     img {
       border-radius: 50%;
