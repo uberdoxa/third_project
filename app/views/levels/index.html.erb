@@ -1,4 +1,6 @@
-<% @levels.each do |level| %>
-	<div><a href="/levels/<%= level.id %>" title=""><%= level.title %></a></div>
-	<div><%= level.description %></div><br>
-<% end %>
+<div class="levelscontainer">
+  <% @levels.each do |level| %>
+  	<div><a href="/levels/<%= level.id %>" title=""><%= level.title %></a></div>
+  	<div><%= level.description %></div><br>
+  <% end %>
+</div>
