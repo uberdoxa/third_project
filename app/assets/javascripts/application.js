@@ -11,10 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(function(){
+
+$(document).on('turbolinks:load', function(){
   console.log('ready');
 
   // /levels/new handling
@@ -62,11 +64,11 @@ $(function(){
 
   // /levels/:id handling
 
-  // var enableNext = function() {
-  //   $('#answer').click(function(){
-  //     window.location.replace('/levels/');
-  //   });
-  // };
+  var enableNext = function(el) {
+    el.click(function(){
+      window.location.href = "/levels?nextlevel=true";
+    });
+  };
   // level_num: 2
 
   var checkVal = function(input){
@@ -75,15 +77,29 @@ $(function(){
             input.attr('ans').split(" ").join('') === input.val().replace(/'/g, '"').split(" ").join('');
   };
 
+
   // var checkAllVals = function(inputs){
   //   return (inputs.length === inputs.filter(el=>{return checkVal($(el))}).length) ? true : false;
   // };
-
   $('.user_ans').bind('input propertychange', function(){
-    //check answer
-    var result = checkVal($(this)) ? 'correct' : '';
-    $('#result').text(result);
-    //if correct check all answers
+    console.log('changed');
+    //check answers
+    $('.user_ans').each((i, el)=>{
+      if(checkVal($(this))){
+        $(this).parent().removeClass('hides');
+    }else{
+      if(!$(this).parent().hasClass('hides'))
+        $(this).parent().addClass('hides');
+    }});
+    if($('.user_ans').length ===
+      $('.user_ans').filter((i, el)=>{return checkVal($(el))}).length){
+        $('#result').text('All challenges completed!');
+        // add onclick to next level!!
+        enableNext($('#next'));
+    }else{
+        $('#result').text('');
+    }
     //if all answers enable next level
   });
+  console.log('ready again');
 });

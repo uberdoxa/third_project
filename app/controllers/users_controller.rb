@@ -22,11 +22,11 @@ class UsersController < ApplicationController
 
 		@user = User.new(user_params)
 
-		@user.level = Level.find_by(title: "Level 1")
+		@user.level = Level.find_by(level_num: 1)
     if @user.save
               MailaMailer.welcome_email(@user).deliver_later
 			session[:user_id] = @user.id
-			redirect_to user_path(@user), notice: "Signed up Successfully"
+			redirect_to root_url, notice: "Signed up Successfully"
 		else
 			flash.now[:errors] = @user.errors.full_messages
 			render :new

@@ -1,18 +1,21 @@
-<div><h1><%= @level.title %></h1></div>
-<div><%= @level.description %></div>
-<br>
-<div>
-	<% @level.challenges.each do |c| %>
-	<div class="show_challenge">
-		<div><%= c.title %></div>
-		<div><%= c.description %></div>
-		<div><%= c.question %></div>
-		<div>
-			<textarea id="user_ans" class="user_ans" placeholder="Enter code here." ans="<%= c.answer %>"></textarea><span id="result"></span>
+<div class="levelscontainer">
+	<div><h1><%= @level.title %></h1></div>
+	<div><%= @level.description %></div>
+	<br>
+	<div>
+		<% @level.challenges.each do |c| %>
+		<div class="show_challenge">
+			<div><%= c.title %></div>
+			<div><%= c.description %></div>
+			<div><%= c.question %></div>
+			<div class="correct hides">
+				<textarea id="user_ans" class="user_ans" placeholder="Enter code here." ans="<%= c.answer %>"></textarea>
+			</div>
 		</div>
-		<div><button id="run">button</button></div>
+		<% end %>
+		<span id="result"></span>
+		<div><button id="next">Next Level</button></div>
 	</div>
-	<% end %>
 </div>
 
 
