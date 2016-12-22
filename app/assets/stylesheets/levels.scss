@@ -1,14 +1,13 @@
 // Place all the styles related to the levels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .levelscontainer {
   margin-top: 160px;
 }
-
-.levelcontainer {
-  margin-top: 160px;
+.correct::after{
+  content: "correct";
 }
-
-.levelnewcontainer {
-  margin-top: 160px;
+.correct.hides::after{
+  display: none;
 }
